@@ -212,7 +212,7 @@ declare module 'twit' {
       statuses: Twitter.Status[],
       search_metadata: Twitter.Metadata,
 
-      error: string
+      errors: string
     }
     interface MediaParam {
       file_path: string

@@ -18,7 +18,7 @@ const stream = T.stream('statuses/filter', {
 
 log.info(`Monitoring hashtags ${hashtags}`);
 stream.on('tweet', function (tweet: Twit.Twitter.Status) {
-  log.info(`got tweet from ${tweet.user.name}`);
+  log.info(`got tweet from ${tweet.user.screen_name}`);
   replyToTweet(tweet);
 });
 
@@ -32,11 +32,11 @@ async function replyToTweet(tweet: Twit.Twitter.Status) {
   try {
     const r = await T.post('statuses/update', {
       in_reply_to_status_id: tweet.id,
-      status: `@${tweet.user.screen_name} ${getRandomReply}`,
+      status: `@${tweet.user.screen_name} ${getRandomReply()}`,
     });
-    log.info(`Answered to Person ${tweet.user.name}`);
-    if (r.data.error) {
-      log.error(r.data.error);
+    log.info(`Answered to Person ${tweet.user.screen_name}`);
+    if (r.data.errors) {
+      log.error(r.data.errors);
     }
   } catch (e) {
     log.error(e);
