@@ -1,0 +1,20 @@
+{
+  "name": "twit-autoreply",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon --watch lib --exec 'node lib/index.js'",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "twit": "^2.2.5"
+  },
+  "devDependencies": {
+    "@types/geojson": "^1.0.1",
+    "@types/node": "^7.0.12",
+    "nodemon": "^1.11.0",
+    "tslint": "^5.1.0",
+    "typescript": "^2.2.2"
+  }
+}
