@@ -8,6 +8,9 @@
     "build": "tsc"
   },
   "dependencies": {
+    "@types/bunyan": "^0.0.36",
+    "bunyan": "^1.8.10",
+    "bunyan-debug-stream": "^1.0.8",
     "twit": "^2.2.5"
   },
   "devDependencies": {

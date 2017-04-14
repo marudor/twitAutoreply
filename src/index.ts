@@ -1,4 +1,5 @@
 import * as Twit from 'twit';
+import log from './logInit';
 import replies from './replies';
 
 
@@ -15,7 +16,9 @@ const stream = T.stream('statuses/filter', {
 });
 
 
+log.info(`Monitoring hashtags ${hashtags}`);
 stream.on('tweet', function (tweet: Twit.Twitter.Status) {
+  log.info(`got tweet from ${tweet.user.name}`);
   replyToTweet(tweet);
 });
 
@@ -31,10 +34,11 @@ async function replyToTweet(tweet: Twit.Twitter.Status) {
       in_reply_to_status_id: tweet.id,
       status: `@${tweet.user.screen_name} ${getRandomReply}`,
     });
+    log.info(`Answered to Person ${tweet.user.name}`);
     if (r.data.error) {
-      console.error(r.data.error);
+      log.error(r.data.error);
     }
   } catch (e) {
-    console.error(e);
+    log.error(e);
   }
 }
