@@ -1,6 +1,9 @@
 ## Twitter Autoreply to hashtags
 This is a very simple bot that autoreplies a random reply whenever someone posts something on the monitored hashtags.
 
+### requirements
+* Node 7.6+
+
 ### config
 Environment Variables needed:
 
