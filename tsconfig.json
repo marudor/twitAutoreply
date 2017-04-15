@@ -1,6 +1,7 @@
 {
   "compileOnSave": true,
   "compilerOptions": {
+    "strict": true,
     "alwaysStrict": true,
     "noEmitOnError": true,
     "noImplicitAny": true,
